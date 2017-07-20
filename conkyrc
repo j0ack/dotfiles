@@ -34,27 +34,18 @@ cpu_avg_samples 2
 TEXT
 [
     {
-	"full_text" : "Time ${time %d/%m %I:%M}",
-	"color" : "\#ff4500"
+	"full_text" : "Time ${time %a %d/%m %I:%M}"
     },
     {
-	"full_text" : "Mail ${execi 600 /home/joachim/.config/openbox/autostart/checkmail.py}",
-	"color" : "\#cc0000"
+	"full_text" : "CPU ${cpu cpu0}% | ${cpu cpu1}% | ${cpu cpu2}% | ${cpu cpu3}%"
     },
     {
-	"full_text" : "CPU ${cpu cpu0}% | ${cpu cpu1}% | ${cpu cpu2}% | ${cpu cpu3}%",
-	"color" : "\#00bfff"
+	"full_text" : "Mem $memperc% > $mem"
     },
     {
-	"full_text" : "Mem $memperc% > $mem",
-	"color" : "\#ffd700"
+	"full_text" : "Disk root ${fs_used_perc /}% | home ${fs_used_perc /home/}%"
     },
     {
-	"full_text" : "Disk ${fs_used_perc /}% | ${fs_used_perc /home/}%",
-	"color" : "\#00cd00"
-    },
-    {
-	"full_text" : "Battery ${battery_percent BAT0}%",
-	"color" : ${if_match ${battery_percent BAT0} >=21}"\#7cfc00"${else}"\#cc0000"${endif}
+	"full_text" : "Battery ${battery_percent BAT0}%"
     }
 ],

@@ -7,7 +7,7 @@
 
 dzen() {
     RC="$HOME/.conkyrc"
-    FG="white"
+    FG="#fff"
     BG="#000"
     ALIGN="right"
     WIDTH="$1"

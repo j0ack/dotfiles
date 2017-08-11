@@ -25,8 +25,8 @@ dzen() {
 
 screens() {
     FIRST="eDP-1"
-    SECOND="HDMI-1"
-    THIRD="HDMI-2"
+    SECOND="DP1-1-1"
+    THIRD="DP1-1-3"
     NUMBER=$(xrandr | grep "$SECOND connected" | wc -l)
 
     if [ "$NUMBER" -eq 1 ]; then
@@ -49,6 +49,8 @@ autostart() {
     nm-applet &
     compton -b &
     nitrogen --restore &
+    owncloud &
+    $HOME/bin/checkdock.sh &
 }
 
 autostart
